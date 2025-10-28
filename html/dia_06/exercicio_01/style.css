@@ -1,0 +1,154 @@
+body{
+  background-image: url("img/fundo.jpg");
+  background-repeat: no-repeat;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif, Geneva, Tahoma, sans-serif;
+  margin: 0px;
+  background-attachment: fixed;
+}
+
+.headpaginaprincipal{
+  text-align: center;
+  background-color: dodgerblue;
+  color: beige;
+  font-size: 55px;
+  margin: auto;
+  padding: 55px;
+  font-weight: bold;
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 5px 5px 20px dodgerblue;
+}
+
+h2{
+  background-color: rgb(30, 109, 255);
+  color: beige;
+  font-size: 16px;
+  font-weight: bold;
+  margin: auto;
+  padding-right: 10px;
+  margin-bottom: 80px;
+  text-align: right;
+  box-shadow: 5px 5px 20px dodgerblue;
+  border-radius: 0px 0px 6px 6px;
+}
+
+.box{
+  margin: 20px auto;
+  width: 50vw;
+  min-width: 250px;
+  padding: 35px 0px;
+  background-color: dodgerblue;
+  text-align: center;
+  font-size: 28px;
+  transition: all 0.3s ease;
+  color: white;
+  text-shadow: 1px 1px 1px black;
+  border-radius: 8px;
+}
+
+#modulohtml{
+  background-color: darkgoldenrod;
+  box-shadow: 0 0 12px white;
+}
+
+#modulocss{
+  background-color: darkolivegreen;
+  box-shadow: 0 0 12px white;
+}
+
+.box:hover {
+  transform: scale(1.02);
+  box-shadow: 0 0 12px dodgerblue;
+  background-color: rgb(30, 109, 255);
+}
+
+#topmargin{
+  margin-top: 100px;
+}
+
+.voltar{
+  background-color: dodgerblue;
+  width: 200px;
+  text-align: center;
+  padding: 5px;
+  margin-left: 5vw;
+  text-shadow: 1px 1px 1px black;
+  box-shadow: 0 0 2px dodgerblue;
+  border-radius: 15%;
+}
+
+.voltar:hover {
+  transform: scale(0.95);
+  box-shadow: 0 0 12px dodgerblue;
+  background-color: dodgerblue;
+}
+
+.botoesmenu{
+  text-decoration: none;
+  color: white;
+}
+
+.aula{
+  margin: 20px auto;
+  width: 70vw;
+  min-width: 400px;
+  padding: 20px 10px;
+  background-color: rgb(67, 161, 255);
+  font-size: 16px;
+  color: white;
+  border-radius: 8px;
+  border: 2px solid white;
+  padding-bottom: 50px;
+  transition: all 0.8s ease;
+}
+
+.aula:hover{
+  transition: all 0.8s ease;
+  transform: scale(1.1);
+  box-shadow:  0 0 20px white;
+}
+
+.tituloaula{
+  font-size: 22px;
+  padding-left: 15px;
+  border-bottom: 1px solid white;
+  text-shadow: -5px 5px 10px black;
+  font-weight: bolder;
+  list-style-type: none;
+}
+
+.blocoaula{
+  margin-top: 20px;
+  margin-left: 80px
+}
+
+.code {
+  background-color: rgb(46, 47, 48);
+  color: white;
+  padding: 0 4px;
+  border: 1px solid gray; 
+}
+
+.comentario{
+  color: green;
+}
+
+.tag{
+  color:dodgerblue;
+  font-weight: bold;
+}
+
+.atrib{
+  color: lightskyblue
+}
+
+.prop{
+  color: orange;
+}
+
+.css{
+  color:yellow;
+}
+
+.measures{
+  color:green;
+}

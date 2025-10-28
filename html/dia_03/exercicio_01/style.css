@@ -1,0 +1,114 @@
+body{
+  background-color:ghostwhite;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+h1{
+  background-image: url("img/icon.webp");
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: 30px 0px;
+  font-size: 50px;
+  color: white;
+  text-align: center;
+  margin: 2px;
+  background-color:rgb(10, 10, 10);
+  line-height: 1;
+}
+
+h1:hover {
+  color: orange;
+  box-shadow: 2px 6px 8px orange;
+  transform: scale(1.01);
+  transition: all 0.4s ease;
+}
+
+h2{
+  color: white;
+  text-align: center;
+  margin-left: 175px;
+  margin-right: 175px;
+  background-color:rgb(10, 10, 10);
+  margin-top: 12px;
+  margin-bottom: 12px;
+  font-size: 25px;
+}
+
+h2:hover{
+  box-shadow: 2px 6px 8px aquamarine;
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+}
+a {
+  text-decoration: none;
+  color: ghostwhite;
+}
+
+a:hover {
+  color: aquamarine;
+}
+
+.aula{
+  border: 3px solid black;
+  border-radius: 3px;
+  background-color: black;
+  color:white;
+  width: 700px;
+  margin: auto
+}
+
+.tituloaula{
+  color: aquamarine;
+  margin-left: 15px;
+  margin-right: 175px;
+  margin-top: 12px;
+  margin-bottom: 1px;
+  font-size: 25px;
+  transition: all 0.4s ease;
+}
+
+.aula:hover{
+  box-shadow: 12px 12px 12px aquamarine;
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+}
+
+.smallerdate{
+  font-size: 14px;
+}
+
+.code{
+  color: orange
+}
+
+p{
+  margin-left: 50px;
+}
+
+.modulo{
+  text-align: center;
+  color: aquamarine;
+  font-size: 25px;
+  transition: all 0.4s ease;
+  border: 3px solid black;
+  border-radius: 3px;
+  background-color: black;
+  color:white;
+  width: 350px;
+  margin: auto;
+  padding: 30px;
+}
+
+.modulo:hover{
+  box-shadow: 0px 12px 18px aquamarine;
+  transform: scale(1.05);
+  transition: all 0.4s ease;
+}
+
+.comentario{
+  color:green
+}
+
+.atrib{
+  color:aqua
+}

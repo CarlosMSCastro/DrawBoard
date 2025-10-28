@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+  <meta charset="UTF-8">
+  <title>Lista com marcador personalizado</title>
+  <style>
+    .lista-personalizada li {
+      list-style-type: none;      /* remove o marcador padrão */
+      position: relative;         /* permite posicionamento absoluto do marcador */
+      padding-left: 1.5em;        /* espaço para o marcador personalizado */
+    }
+
+    .lista-personalizada li::before {
+      content: "@ - ";            /* marcador personalizado */
+      position: absolute;
+      left: 0;
+      color: darkred;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h2>Exemplo de lista personalizada</h2>
+  <ul class="lista-personalizada">
+    <li>Frutas</li>
+    <li>Refrigerante</li>
+    <li>Carne</li>
+    <li>Sorvete</li>
+  </ul>
+
+</body>
+</html>
