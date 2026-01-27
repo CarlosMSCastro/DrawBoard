@@ -1,37 +1,25 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-
-
-
-const Card = ({title}) => {
-  const [hasLiked, setHasLiked] = useState(false);
-  const [count, setCount] = useState(0);
-
-  useEffect( () => {
-    console.log(`${title} has been liked: ${hasLiked}`);
-  }, [hasLiked]);
-
-  return (
-    <div className="card" onClick={() => setCount(count + 1)}>
-      <h2>{title} <br/> {count || null}</h2>
-
-      <button onClick={() => setHasLiked(!hasLiked)}>
-        {hasLiked ?  '✅' : '❌'}
-      </button>
-    </div>
-  )
-}
+import React from "react";
+import Search from "./components/Search.jsx"
+import {useState} from "react";
 
 const App = () => {
+  const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <div className="card-container" >
-      <Card title="Star Wars" rating={5} isCool={true}/>
-      <Card title="Avatar"/>
-      <Card title="Lion King"/>
-    </div>
-  )
-}
+    <main>
+      <div className="pattern"/>
+      <div className="wrapper">
+        <header>
+          <h1>
+            Find <span className="text-gradient">Movies</span> You'll Enjoy Without the Hassle
+          </h1>
+        </header>
+        <img src="./hero.png" alt="Hero Banner"/>
 
+        <Search />
+      </div>
+    </main>
+  );
+};
 
-export default App
+export default App;
