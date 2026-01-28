@@ -1,2 +1,2 @@
 quiz-app- https://www.youtube.com/watch?v=3OqiKTyH4r0
-my-first-react-app - https://www.youtube.com/watch?v=dCLhUialKPQ ( 56:30 )
+my-first-react-app - https://www.youtube.com/watch?v=dCLhUialKPQ ( 1:19:30 )
