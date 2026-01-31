@@ -1,2 +1,4 @@
 quiz-app- https://www.youtube.com/watch?v=3OqiKTyH4r0
-my-first-react-app - https://www.youtube.com/watch?v=dCLhUialKPQ - deployed - https://ccdev-react.ct.ws/
+movie-app - https://www.youtube.com/watch?v=dCLhUialKPQ - deployed - https://ccdev-react.ct.ws/moviedb
+Memory Card Game - https://www.youtube.com/watch?v=r47C9c4qCqE - deployed - https://ccdev-react.ct.ws/afbraga
+Music Player - https://www.youtube.com/watch?v=r47C9c4qCqE - 59:02
