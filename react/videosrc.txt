@@ -1,4 +1,4 @@
 quiz-app- https://www.youtube.com/watch?v=3OqiKTyH4r0
 movie-app - https://www.youtube.com/watch?v=dCLhUialKPQ - deployed - https://ccdev-react.ct.ws/moviedb
 Memory Card Game - https://www.youtube.com/watch?v=r47C9c4qCqE - deployed - https://ccdev-react.ct.ws/afbraga
-Music Player - https://www.youtube.com/watch?v=r47C9c4qCqE - 59:02
+Music Player - https://www.youtube.com/watch?v=r47C9c4qCqE - 1:49:00
