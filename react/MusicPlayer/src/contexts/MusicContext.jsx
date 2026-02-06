@@ -1,62 +1,64 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext, useEffect } from "react";
 
 export const MusicContext = createContext();
 
+
+const BASE_PATH = import.meta.env.BASE_URL;
 const songs = [
   {
     id: 1,
     title: "Arte",
     artist: "Slow J",
-    url: "/songs/Arte.mp3",
+    url: `${BASE_PATH}/songs/Arte.mp3`,
     duration: "3:16",
   },
   {
     id: 2,
     title: "Comida",
     artist: "Slow J",
-    url: "/songs/Comida.mp3",
+    url: `${BASE_PATH}/songs/Comida.mp3`,
     duration: "5:10",
   },
   {
     id: 3,
     title: "Fogo",
     artist: "Slow J",
-    url: "/songs/Fogo.mp3",
+    url: `${BASE_PATH}/songs/Fogo.mp3`,
     duration: "2:50",
   },
   {
     id: 4,
     title: "Fome",
     artist: "Slow J (Prod. Holly)",
-    url: "/songs/Fome.mp3",
+    url: `${BASE_PATH}/songs/Fome.mp3`,
     duration: "2:53",
   },
   {
     id: 5,
     title: "Tambem sonhar",
     artist: "Slow J ft. Sara Tavares",
-    url: "/songs/Tambem sonhar.mp3",
+    url: `${BASE_PATH}/songs/Tambem sonhar.mp3`,
     duration: "3:28",
   },
   {
     id: 6,
     title: "Tata",
     artist: "Slow J",
-    url: "/songs/Tata.mp3",
+    url: `${BASE_PATH}/songs/Tata.mp3`,
     duration: "2:39",
   },
   {
     id: 7,
     title: "Ultimamente",
     artist: "Slow J",
-    url: "/songs/Ultimamente.mp3",
+    url: `${BASE_PATH}/songs/Ultimamente.mp3`,
     duration: "3:42",
   },
   {
     id: 8,
     title: "Where u @",
     artist: "Slow J",
-    url: "/songs/Where u @.mp3",
+    url: `${BASE_PATH}/songs/Where u @.mp3`,
     duration: "2:41",
   },
 ];
@@ -70,6 +72,25 @@ export const MusicProvider = ({ children }) => {
   const [isPlaying, setIsPlaying] = useState(false);
   const [volume, setVolume] = useState(1);
   const [playlists, setPlaylists] = useState([]);
+
+
+    useEffect(() => {
+    const savedPlaylists = localStorage.getItem("musicPlayerPlaylists");
+    if (savedPlaylists) {
+      const playlists = JSON.parse(savedPlaylists);
+      setPlaylists(playlists);
+    }
+  }, [])
+
+
+  useEffect(() => {
+    if (playlists.length > 0) {
+      localStorage.setItem("musicPlayerPlaylists", JSON.stringify(playlists));
+    } else {
+      localStorage.removeItem("musicPlayerPlaylists");
+    }
+  }, [playlists]);
+
 
   const handlePlaySong = (song, index) => {
     setCurrentTrack(song);
