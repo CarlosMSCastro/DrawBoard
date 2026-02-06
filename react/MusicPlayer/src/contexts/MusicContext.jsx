@@ -1,7 +1,5 @@
 import { createContext, useState, useContext } from "react";
 
-
-
 export const MusicContext = createContext();
 
 const songs = [
@@ -63,7 +61,7 @@ const songs = [
   },
 ];
 
-export const MusicProvider = ({children}) => {
+export const MusicProvider = ({ children }) => {
   const [allSongs, setAllSongs] = useState(songs);
   const [currentTrack, setCurrentTrack] = useState(songs[0]);
   const [currentTrackIndex, setCurrentTrackIndex] = useState(0);
@@ -81,12 +79,11 @@ export const MusicProvider = ({children}) => {
 
   const nextTrack = () => {
     setCurrentTrackIndex((prev) => {
-      const nextIndex = (prev +1) % allSongs.length;
+      const nextIndex = (prev + 1) % allSongs.length;
       setCurrentTrack(allSongs[nextIndex]);
-      return nextIndex
+      return nextIndex;
     });
     setIsPlaying(false);
-    
   };
 
   const prevTrack = () => {
@@ -96,7 +93,7 @@ export const MusicProvider = ({children}) => {
       return nextIndex;
     });
     setIsPlaying(false);
-  }
+  };
 
   const formatTime = (time) => {
     if (isNaN(time) || time === undefined) return "00:00";
@@ -114,42 +111,68 @@ export const MusicProvider = ({children}) => {
       songs: [],
     };
     setPlaylists((prev) => [...prev, newPlaylist]);
-  }
+  };
 
-  const play = () => {setIsPlaying(true);};
-  const pause = () => {setIsPlaying(false);};
-  return (
-  <MusicContext.Provider 
-    value={{
-      allSongs,
-      handlePlaySong,
-      currentTrackIndex,
-      currentTrack,
-      currentTime,
-      setCurrentTime,
-      formatTime,
-      duration,
-      setDuration,
-      nextTrack,
-      prevTrack,
-      play,
-      pause,
-      isPlaying,
-      volume,
-      setVolume,
-      createPlaylist,
-      playlists
-    }}
-  >
-    {children}</MusicContext.Provider>
+  const deletePlaylist = (playlistId) => {
+    setPlaylists((prev) =>
+      prev.filter((playlist) => playlist.id !== playlistId),
     );
-}
+  };
+
+  const addSongToPlaylist = (playlistId, song) => {
+    setPlaylists((prev) =>
+      prev.map((playlist) => {
+        if (playlist.id === playlistId) {
+          return { ...playlist, songs: [...playlist.songs, song] };
+        } else {
+          return playlist;
+        }
+      }),
+    );
+  };
+
+  const play = () => {
+    setIsPlaying(true);
+  };
+  const pause = () => {
+    setIsPlaying(false);
+  };
+  return (
+    <MusicContext.Provider
+      value={{
+        allSongs,
+        handlePlaySong,
+        currentTrackIndex,
+        currentTrack,
+        currentTime,
+        setCurrentTime,
+        formatTime,
+        duration,
+        setDuration,
+        nextTrack,
+        prevTrack,
+        play,
+        pause,
+        isPlaying,
+        volume,
+        setVolume,
+        createPlaylist,
+        playlists,
+        addSongToPlaylist,
+        setCurrentTrack,
+        deletePlaylist
+      }}
+    >
+      {children}
+    </MusicContext.Provider>
+  );
+};
 
 export const useMusic = () => {
   const contextValue = useContext(MusicContext);
-  if(!contextValue){
+  if (!contextValue) {
     throw new Error("useMusic must be used within a MusicProvider");
   }
 
   return contextValue;
-}
+};
