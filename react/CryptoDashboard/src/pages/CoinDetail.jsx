@@ -1,4 +1,6 @@
+import { useParams } from "react-router";
 
 export const CoinDetail = () => {
-  return <div>This is a Coin Page</div>
+  const { id } = useParams();
+  return <div>This is a Coin Page: {id}</div>;
 }
