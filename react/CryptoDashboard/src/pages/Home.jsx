@@ -59,13 +59,13 @@ export const Home = () => {
       <header className="header">
         <div className="header-content">
           <div className="logo-section">
-            <h1>🚀 Crypto Tracker</h1>
-            <p>Real-time Crypto Market Data</p>
+            <h1>🚀 CryptoDashboard</h1>
+            <p>Estatisticas de criptomoedas em tempo Real</p>
           </div>
           <div className="search-section">
             <input
               type="text"
-              placeholder="Search Cryptos..."
+              placeholder="Procurar..."
               className="search-input"
               onChange={(e) => setSearchQuery(e.target.value)}
               value={searchQuery}
@@ -75,13 +75,13 @@ export const Home = () => {
       </header>
       <div className="controls">
         <div className="filter-group">
-          <label>Sort by:</label>
+          <label>Ordenar por:</label>
           <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
             <option value="market_cap_rank">Rank</option>
-            <option value="name">Name</option>
-            <option value="price">Price (Low to High)</option>
-            <option value="price_desc">Price (High to Low)</option>
-            <option value="change">24h Change</option>
+            <option value="name">Nome</option>
+            <option value="price">Preço (crescente)</option>
+            <option value="price_desc">Preço (decrescente)</option>
+            <option value="change">Variancia 24h</option>
             <option value="market_cap">Market Cap</option>
           </select>
         </div>
@@ -104,7 +104,7 @@ export const Home = () => {
       {isLoading ? (
         <div className="loading">
           <div className="spinner" />
-          <p>Loading Crytpo Data...</p>
+          <p>A carregar...</p>
         </div>
       ) : (
         <div className={`crypto-container ${viewMode}`}>
@@ -113,6 +113,9 @@ export const Home = () => {
           ))}
         </div>
       )}
+      <footer className="footer">
+        <p>Data provided by CoinGecko • Updated every 30 seconds</p>
+      </footer>
     </div>
   );
 };
